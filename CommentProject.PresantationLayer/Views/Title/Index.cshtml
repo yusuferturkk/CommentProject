@@ -1,0 +1,26 @@
+﻿@model List<Title>
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><h4>Başlıklar Listem</h4><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Başlık Adı</th>
+            <th>Yorumlar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TitleId</td>
+                <td>@item.TitleName</td>
+                <td><a href="#" class="btn btn-outline-success">Yorumları Görüntüle</a></td>
+            </tr>
+        }
+    </table>
+</div>

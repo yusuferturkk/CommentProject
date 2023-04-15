@@ -1,0 +1,9 @@
+﻿@model Title
+
+@{
+    Layout = null;
+}
+
+<div class="container">
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+</div>
