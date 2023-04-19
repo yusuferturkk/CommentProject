@@ -49,5 +49,20 @@ namespace CommentProject.BusinessLayer.Concrete
         {
             return _commentDal.GetListByFilter(filter);
         }
+
+        public List<Comment> GetCommentsByTitle(int id)
+        {
+            return _commentDal.GetCommentsByTitle(id);
+        }
+
+        public List<Comment> GetCommentsByTitleWithUser(int id)
+        {
+            return _commentDal.GetCommentsByTitleWithUser(id);
+        }
+
+        public List<Comment> GetCommentsByUserWithTitle(int id)
+        {
+            return _commentDal.GetCommentsByUserWithTitle(id);
+        }
     }
 }

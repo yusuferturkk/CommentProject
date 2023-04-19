@@ -1,9 +1,20 @@
 ﻿@model Title
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
 <div class="container">
-    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+    <form method="post">
+        <br />
+        <h4>Başlık Oluşturma Ekranı</h4><br />
+        <label>Kategori Seçiniz</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+        <br />
+        <label>Başlığı Giriniz</label>
+        <input type="text" class="form-control" asp-for="TitleName" /><br />
+        <button class="btn btn-outline-success">Başlığı Oluştur</button>
+    </form>
 </div>

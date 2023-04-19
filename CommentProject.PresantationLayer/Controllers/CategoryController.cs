@@ -33,5 +33,28 @@ namespace CommentProject.PresantationLayer.Controllers
             _categoryService.Add(category);
             return RedirectToAction("Index");
         }
+
+        public IActionResult DeleteCategory(int id)
+        {
+            var value = _categoryService.GetById(id);
+            value.CategoryStatus = false;
+            _categoryService.Update(value);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateCategory(int id)
+        {
+            var value = _categoryService.GetById(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateCategory(Category category)
+        {
+            category.CategoryStatus = true;
+            _categoryService.Update(category);
+            return RedirectToAction("Index");
+        }
     }
 }

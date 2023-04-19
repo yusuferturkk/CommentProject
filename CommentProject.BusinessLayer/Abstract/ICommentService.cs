@@ -9,5 +9,8 @@ namespace CommentProject.BusinessLayer.Abstract
 {
     public interface ICommentService : IGenericService<Comment>
     {
+        List<Comment> GetCommentsByTitle(int id);
+        List<Comment> GetCommentsByTitleWithUser(int id);
+        List<Comment> GetCommentsByUserWithTitle(int id);
     }
 }

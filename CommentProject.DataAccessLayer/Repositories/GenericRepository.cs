@@ -17,53 +17,35 @@ namespace CommentProject.DataAccessLayer.Repositories
 
         public void Add(TEntity entity)
         {
-            using (context)
-            {
-                context.Add(entity);
-                context.SaveChanges();
-            }
+            context.Add(entity);
+            context.SaveChanges();
         }
 
         public void Update(TEntity entity)
         {
-            using (context)
-            {
-                context.Update(entity);
-                context.SaveChanges();
-            }
+            context.Update(entity);
+            context.SaveChanges();
         }
 
         public void Delete(TEntity entity)
         {
-            using (context)
-            {
-                context.Remove(entity);
-                context.SaveChanges();
-            }
+            context.Remove(entity);
+            context.SaveChanges();
         }
 
         public TEntity GetById(int id)
         {
-            using (context)
-            {
-                return context.Set<TEntity>().Find(id);
-            }
+            return context.Set<TEntity>().Find(id);
         }
 
         public List<TEntity> GetList()
         {
-            using (context)
-            {
-                return context.Set<TEntity>().ToList();
-            }
+            return context.Set<TEntity>().ToList();
         }
 
         public List<TEntity> GetListByFilter(Expression<Func<TEntity, bool>> filter)
         {
-            using (context)
-            {
-                return context.Set<TEntity>().Where(filter).ToList();
-            }
+            return context.Set<TEntity>().Where(filter).ToList();
         }
     }
 }
